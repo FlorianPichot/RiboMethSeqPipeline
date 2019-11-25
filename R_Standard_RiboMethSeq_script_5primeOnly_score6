@@ -29,8 +29,6 @@ ref_Hs <- na.omit(ref_Hs)
 
 
 for (y in type) {
-memory_max <- data.frame (position = NA)
-memory_scoreA <- data.frame (position = NA)
 for (z in DataDirs) {
 SampleDir <- paste0(ResultsDir,"/", z)
 dir.create (SampleDir, showWarnings = FALSE)
@@ -243,7 +241,7 @@ geom_density(data = Nm, alpha = 0.75, fill = "deepskyblue", colour="deepskyblue"
 geom_density(data = N, alpha = 0.5, fill = "grey", colour="grey") + 
 geom_density(data = Psi, alpha = 0.5, fill = "red", colour="red") +
 theme_bw()
-ggsave (filename = paste0 ("Density_score_A_6_", y, "_", z, ".pdf"), plot = last_plot())
+ggsave (filename = paste0 ("Density_score_max_6_", y, "_", z, ".pdf"), plot = last_plot())
 
 
 ggplot (Nm, aes(scoreA)) + 
@@ -252,7 +250,7 @@ geom_density(alpha = 0.75, fill = "deepskyblue", colour = "deepskyblue") +
 geom_density(data = N, alpha = 0.5, fill = "grey", colour = "grey") + 
 geom_density(data = Psi, alpha = 0.5, fill = "red", colour = "red") +
 theme_bw()
-ggsave (filename = paste0 ("Density_score_max_6_", y, "_", z, ".pdf"), plot = last_plot())
+ggsave (filename = paste0 ("Density_score_A_6_", y, "_", z, ".pdf"), plot = last_plot())
 
 theme0 <- function(...) theme( legend.position = "none",
                                panel.background = element_blank(),
