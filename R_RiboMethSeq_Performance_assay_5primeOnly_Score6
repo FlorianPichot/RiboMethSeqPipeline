@@ -106,7 +106,7 @@ for (z in DataDirs) {
     miR_local_dir <- paste(extDataDir, "/",z, sep = "")
     #print (miR_local_dir)
     #print (z)
-    miR_file <- paste (miR_local_dir,"/", "Count",y,"_hs_rRNA.csv", sep ="")
+    miR_file <- paste (miR_local_dir,"/", "UCount5prime_",y,"_hs_rRNA.csv", sep ="")
     #print (miR_file)
     
     #reading file from csv with names of colums and rows
