@@ -72,8 +72,7 @@ for (i in 3:n) {
   k <- i-1 
   l <- i+1 
   m <- i+2
-  results$around[i] = (1 - results$ratio[i]/(mean(results$ratio[j:k])+ mean (results$ratio[l:m])))}		# Quantification de la variabilité de notre résultat par rapport à ses 12 valeurs voisines
-
+  results$around[i] = (1 - results$ratio[i]/(mean(results$ratio[j:k])+ mean (results$ratio[l:m])))}
 
 results$deviation <- NA
 for (i in 4:n) {
@@ -81,7 +80,7 @@ for (i in 4:n) {
   k <- i-1 
   l <- i+1 
   m <- i+3
-  results$deviation[i] = (1 - results$around[i]/(sd(results$around[j:k])+ sd(results$around[l:m])))}	# Mesure de la variance de nos résultats pour chaque position
+  results$deviation[i] = (1 - results$around[i]/(sd(results$around[j:k])+ sd(results$around[l:m])))}
 
 results$ratio2 <- NA	
 for (i in 2:n) {results$ratio2[i] = 1/results$ratio[i]}		# Inverse du premier ratio
@@ -130,7 +129,7 @@ write.table (results, file=paste(SampleDir,"/Treatment_",z,"_", y,".csv",sep="")
 
 results <- na.omit (results)
 
-# Filtering positions with low 5 prime coverage to minimize false positives hits
+# Filtering positions with low 5/3 prime coverage to minimize false positives hits
 
 mean <- mean (results$counts)
 seuil <- 0.05 * mean
