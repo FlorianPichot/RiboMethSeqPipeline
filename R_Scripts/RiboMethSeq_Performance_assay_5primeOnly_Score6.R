@@ -74,12 +74,10 @@ fctACC <- function (TP, TN, FP, FN) {
 list.files(extDataDir)
 
 DataDirs <- list.dirs(extDataDir, full.names = FALSE, recursive = FALSE)
-DataDirs
 
 ResultsDir <- paste0(ResultsDir,"/2DensityPlot(ScoreMAX6)_MCC_", basename(extDataDir))
 dir.create (ResultsDir, showWarnings=FALSE)
 
-# Création de la table de référence pour la position des méthylations
 ref_Hs <- read.csv2("Hsapiens_rRNA.csv", sep=" ", blank.lines.skip= TRUE, header = FALSE, col.names=(c("type","position","identity")))
 ref_Hs$identity <- paste0 (ref_Hs$identity, "_Hs") 
 ref_Hs <- na.omit(ref_Hs)
