@@ -1,5 +1,3 @@
-rm(list=ls(all=TRUE))
-
 ####### Input Area #######
 
 type <- list("5.8S", "18S", "28S")		      # rRNA list to study
