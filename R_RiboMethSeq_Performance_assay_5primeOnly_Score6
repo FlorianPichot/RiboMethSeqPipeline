@@ -1,6 +1,6 @@
 rm(list=ls(all=TRUE))
 
-####### Zone à modifier #######
+####### Input Area #######
 
 type <- list("5.8S", "18S", "28S")		      # rRNA list to study
 extDataDir <-"Path/to/Samples/Directory"		# Path to the directory with the 'counts' files
@@ -72,7 +72,7 @@ fctACC <- function (TP, TN, FP, FN) {
 }
 
 
-####### Déroulement du programme #######
+####### PROCESSING #######
 list.files(extDataDir)
 
 DataDirs <- list.dirs(extDataDir, full.names = FALSE, recursive = FALSE)
