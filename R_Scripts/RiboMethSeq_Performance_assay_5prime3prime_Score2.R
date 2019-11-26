@@ -273,7 +273,7 @@ for (z in DataDirs) {
   
   # ROCurve score mean #
   dev.new()
-  plot (tot_score_mean$FPR, tot_score_mean$TPR, type = "l", col = "blue", xlim = c(0,0.05), main = "ROCurve for Score mean", sub=paste0("MCC = ", max(unlist(tot_score_mean$MCC))), xlab=" ", ylab=" ")
+  plot (tot_score_mean$FPR, tot_score_mean$TPR, type = "l", col = "blue", xlim = c(0,0.05), main = "ROCurve for Score mean", sub=paste0("MCC = ", max(unlist(tot_score_mean$MCC),na.rm=T)), xlab=" ", ylab=" ")
   lines(tot_score_mean$FPR, tot_score_mean$MCC, type = "l", col = "orange")
   savePlot (filename = paste0 (SampleDir, "/ROCurve_Score_mean"), "pdf")
   graphics.off()
@@ -300,7 +300,7 @@ for (z in DataDirs) {
   
   # ROCurve score A #
   dev.new()
-  plot (tot_scoreA$FPR, tot_scoreA$TPR, type = "l", col = "blue", xlim = c(0,0.05), main = "ROCurve for Score A", sub=paste0("MCC = ", max(unlist(tot_scoreA$MCC))), xlab=" ", ylab=" ")
+  plot (tot_scoreA$FPR, tot_scoreA$TPR, type = "l", col = "blue", xlim = c(0,0.05), main = "ROCurve for Score A", sub=paste0("MCC = ", max(unlist(tot_scoreA$MCC),na.rm=T)), xlab=" ", ylab=" ")
   lines(tot_scoreA$FPR, tot_scoreA$MCC, type = "l", col = "orange")
   savePlot (filename = paste0 (SampleDir, "/ROCurve_Score_A"), "pdf")
   graphics.off()
