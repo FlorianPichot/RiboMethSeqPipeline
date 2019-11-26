@@ -2,7 +2,7 @@ rm(list=ls(all=TRUE))
 
 ####### Input Area #######
 
-type <- list("5.8S", "18S", "28S")		# rRNA list to study
+type <- list("5.8S", "18S", "28S")		      # rRNA list to study
 extDataDir <-"Path/to/Samples/Directory"		# Directory with 'counts' files
 ResultsDir <-"Path/to/Results/Directory"		# Directory where to put the results (A directory is created if needed)
 
@@ -78,12 +78,10 @@ fctACC <- function (TP, TN, FP, FN) {
 list.files(extDataDir)
 
 DataDirs <- list.dirs(extDataDir, full.names = FALSE, recursive = FALSE)
-DataDirs
 
 ResultsDir <- paste0(ResultsDir,"/2DensityPlot(ScoreMEAN2)_MCC_", basename(extDataDir))
 dir.create (ResultsDir, showWarnings=FALSE)
 
-# Création de la table de référence pour la position des méthylations
 ref_Hs <- read.csv2("Hsapiens_rRNA.csv", sep=" ", blank.lines.skip= TRUE, header = FALSE, col.names=(c("type","position","identity")))
 ref_Hs$identity <- paste0 (ref_Hs$identity, "_Hs") 
 ref_Hs <- na.omit(ref_Hs)
@@ -128,7 +126,7 @@ for (z in DataDirs) {
     table <- data.frame (position = 1:n)
     results <- merge (sample, table, by="position", all=TRUE)
     
-    results$counts [is.na(results$counts)] <- 1	  # Fill NA values (otherwise, the script crashes)
+    results$counts [is.na(results$counts)] <- 1	  
     
     results$ratio <- NA	
     
