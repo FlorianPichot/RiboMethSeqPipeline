@@ -14,7 +14,6 @@ setwd(ResultsDir)
 list.files(extDataDir)
 
 DataDirs <- list.dirs(extDataDir, full.names = FALSE, recursive = FALSE)
-DataDirs
 
 ResultsDir <- paste0(ResultsDir,"/Calcul_5prime")
 dir.create (ResultsDir, showWarnings=FALSE)
@@ -26,8 +25,6 @@ ref_Hs <- na.omit(ref_Hs)
 
 
 #READING local DATA into separate dataframes
-
-
 for (y in type) {
 for (z in DataDirs) {
 SampleDir <- paste0(ResultsDir,"/", z)
