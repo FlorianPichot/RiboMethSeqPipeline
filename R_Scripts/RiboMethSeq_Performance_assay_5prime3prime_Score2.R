@@ -300,8 +300,8 @@ for (z in DataDirs) {
   
   # ROCurve score A #
   dev.new()
-  plot (tot_score_A$FPR, tot_score_A$TPR, type = "l", col = "blue", xlim = c(0,0.05), main = "ROCurve for Score A", sub=paste0("MCC = ", max(unlist(tot_score_A$MCC))), xlab=" ", ylab=" ")
-  lines(tot_score_A$FPR, tot_score_A$MCC, type = "l", col = "orange")
+  plot (tot_scoreA$FPR, tot_scoreA$TPR, type = "l", col = "blue", xlim = c(0,0.05), main = "ROCurve for Score A", sub=paste0("MCC = ", max(unlist(tot_scoreA$MCC))), xlab=" ", ylab=" ")
+  lines(tot_scoreA$FPR, tot_scoreA$MCC, type = "l", col = "orange")
   savePlot (filename = paste0 (SampleDir, "/ROCurve_Score_A"), "pdf")
   graphics.off()
   
